@@ -1,0 +1,108 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5d4954;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    color: white;            /*Pone de color blanco las letras*/
+    text-transform: uppercase; /*Pone toda las letras en MAYUSCULA*/
+    letter-spacing: 5px;       /*Pone espacios entre las letras del logo*/
+    font-size: 20px;           /*Espara poner las letras mas grandes*/
+}
+
+.nav-links{
+    display: flex;              /*Es para poner en una sola linea los links*/
+    justify-content: space-around; /*Es para que hay espacios entre los links*/
+    width: 40%;                 /*Nos da proporcion entre el margen derecho*/
+}
+.nav-links li{
+    list-style: none;           /*Borra los puntos de los links*/
+}
+.nav-links a{
+    color: white;
+    text-decoration: none;         /*Nos retira las lineas de los links*/
+    letter-spacing:3px;    /*Nos proporciona espacioos iguales entre las letras de los*/
+    font-weight: bold;     /*Pone negrita a las letras*/
+    font-size: 14px;
+}
+.burger{
+    display: none;           /*Ocultamos el menu hanburgesa*/
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width:1024px){
+    .nav-links{
+        width: 60%;
+    }
+        
+}
+
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #5d4954;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translate(100%);
+        transition: transform 0.5s ease-in; 
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;    
+    }
+}
+
+.nav-active{
+    transform: translate(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
